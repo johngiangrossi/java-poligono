@@ -1,6 +1,6 @@
 package Poligoni;
 
-public class rettangolo implements poligono {
+public class rettangolo implements interfaccia {
 
     // fields
     private int base;

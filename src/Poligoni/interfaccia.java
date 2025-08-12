@@ -1,9 +1,9 @@
 package Poligoni;
 
-
-public interface poligono {
+public interface interfaccia {
 
     public int calculatePerimeter();
 
     public int calculateArea();
 }
+

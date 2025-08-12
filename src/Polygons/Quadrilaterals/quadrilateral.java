@@ -1,46 +1,39 @@
-package Poligoni;
+package Polygons.Quadrilaterals;
+import Polygons.Polygon;
 
-public class triangolo implements interfaccia {
+public abstract class quadrilateral extends Polygon {
 
     // fields
-    private int base;
-    private int height;
     private int late1;
     private int late2;
     private int late3;
+    private int late4;
 
     // costruttore
-    public triangolo(int base, int height, int late1, int late2, int late3) {
-        if (base < 0 || height < 0 || late1 < 0 || late2 < 0 || late3 < 0) {
+    public quadrilateral(int sides, int late1, int late2, int late3, int late4) {
+        super(0);
+        if (late1 < 0 || late2 < 0 || late3 < 0 || late4 < 0) {
             System.out.println("hai inserito valori errati, inserisco quelli di default");
         }
-        this.base = base;
-        this.height = height;
         this.late1 = late1;
         this.late2 = late2;
         this.late3 = late3;
+        this.late4 = late4;
     }
+
 
     // metodi
+    // ottenere perimetro triangoli
     @Override
-    public int calculatePerimeter() {
-        return late1 + late2 + late3; 
+    public int getPerimeter() {
+        return late1 + late2 + late3 + late4; 
     }
 
+    // ottenere area triangoli
     @Override
-    public int calculateArea() {
-        return (base * height) / 2;
-    }
+    public abstract double getArea();
 
     // getters
-    public int getBase() {
-        return base;
-    }
-    
-    public int getHeight() {
-        return height;
-    }
-
     public int getLate1() {
         return late1;
     }
@@ -52,25 +45,14 @@ public class triangolo implements interfaccia {
     public int getLate3() {
         return late3;
     }
-    
+
+
+    public int getLate4() {
+        return late4;
+    }
+
 
     // setters
-    public void setBase(int base) {
-        if (base < 0) {
-            System.out.println("hai inserito valori errati, metto quelli di default");
-        } else {
-            this.base = base;
-        }
-    }
-
-    public void setHeight(int height) {
-        if (height < 0) {
-            System.out.println("hai inserito valori errati, metto quelli di default");
-        } else {
-            this.height = height;
-        }
-    }
-
     public void setLate1(int late1) {
         if (late1 < 0) {
             System.out.println("hai inserito valori errati, metto quelli di default");
@@ -95,4 +77,14 @@ public class triangolo implements interfaccia {
         }
     }
 
+    public void setLate4(int late4) {
+        if (late4 < 0) {
+            System.out.println("hai inserito valori errati, metto quelli di default");
+        } else {
+            this.late4 = late4;
+        }
+    }
+
+    
 }
+
